@@ -1,0 +1,19 @@
+[Unit]
+Description=DawnCraft Server
+After=network.target
+
+[Service]
+Restart=always
+RestartSec=5
+User=botnik
+Nice=1
+SuccessExitStatus=0 1
+ProtectHome=true
+ProtectSystem=full
+PrivateDevices=true
+NoNewPrivileges=true
+WorkingDirectory=/opt/minecraft/dawncraft/
+ExecStart=/usr/bin/bash /opt/minecraft/dawncraft/run.sh
+
+[Install]
+WantedBy=multi-user.target
